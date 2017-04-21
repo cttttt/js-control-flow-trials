@@ -1,0 +1,21 @@
+{
+  "name": "control-flow-tutorial",
+  "version": "1.0.0",
+  "description": "## Sync",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/tap --bail tests/*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.3.0",
+    "bluebird": "^3.5.0",
+    "sinon": "^2.1.0",
+    "tap": "^10.3.2"
+  }
+}
