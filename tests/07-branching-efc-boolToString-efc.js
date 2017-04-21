@@ -9,4 +9,4 @@ boolToString(randomBoolStub, callback);
 
 tap.equals(randomBoolStub.callCount, 1, 'Was a randomBoolean fetched exactly once?');
 tap.equals(callback.callCount, 1, 'Was the callback called exactly once?');
-tap.equals(callback.firstCall.args[1], randomBool ? 'True' : 'False');
+tap.equals(callback.firstCall.args[1], randomBool ? 'True' : 'False', 'Did your function return "True" or "False" depending on the truthiness of the value it fetched?');
