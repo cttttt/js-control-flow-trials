@@ -14,5 +14,5 @@ tap.equal(first.callCount, 1, 'Was the first function called exactly once?');
 tap.equal(second.callCount, 1, 'Was the second function called exactly once?');
 tap.equal(third.callCount, 1, 'Was the third function called exactly once?');
 tap.equal(second.firstCall.args[0], 1, 'Was the second function called with the result of the first?');
-tap.equal(third.firstCall.args[0], 2, 'Was the third function called with the result of the second?');
+tap.equal(third.firstCall.args[1], 2, 'Was the third function called with the result of the second?');
 
