@@ -13,6 +13,9 @@ git clone https://github.com/cttttt/js-control-flow-trials
 cd js-control-flow-trials
 npm install
 npm test
+#
+# To fix errors in tests/##-something.js edit trials/##-something.js
+#
 ```
 
 ## Tips
@@ -300,7 +303,7 @@ return1().then(function (one) {
 })
 ```
 
-`await` is a special keyword that asks Javascript takes a `Promise` and asks the Javascript runtime to pause execution until the `Promise` is resolved.  When execution resumes, the `await` statement will evaluate to the _future value_ represented by the `Promise`.
+`await` is a special keyword that takes a `Promise` and asks the Javascript runtime to (more or less) take this function off of the stack until after the `Promise` is resolved.  When execution resumes, the `await` statement will evaluate to the _future value_ represented by the `Promise`.
 
 ```javascript
 var Promise = require('bluebird'),
