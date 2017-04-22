@@ -22,6 +22,9 @@ for(var i=0; i<100; i++) {
 sinon.spy(bluebird, 'map');
 var promise = transformer(list, double, callback);
 
+tap.ok(promise, 'Was a promise returned?');
+tap.ok(promise.then, 'Was a promise returned?');
+
 promise.then((r) => {
     tap.ok(bluebird.map.notCalled, 'Confirm that bluebird.map was not used');
     tap.deepEquals(r, expectedResult, 'Did the call return a properly transformed array?');
