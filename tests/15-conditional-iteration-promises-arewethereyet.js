@@ -5,7 +5,7 @@ var tap = require('tap'),
 process.on('uncaughtException', tap.threw).on('unhandledRejection', tap.threw);
 
 var stillGoing = sinon.stub();
-var numTruthies = Math.floor(Math.random() * 30);
+var numTruthies = Math.floor(Math.random() * 30) + 1;
 for (var i=0; i<numTruthies; i++) {
     stillGoing.onCall(i).resolves(true);
 }

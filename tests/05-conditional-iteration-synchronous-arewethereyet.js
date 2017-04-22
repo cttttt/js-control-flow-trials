@@ -3,7 +3,7 @@ var tap = require('tap'),
     poller = require('../trials/05-conditional-iteration-synchronous').poller;
 
 var stillGoing = sinon.stub();
-var numTruthies = Math.floor(Math.random() * 30);
+var numTruthies = Math.floor(Math.random() * 30) + 1;
 for (var i=0; i<numTruthies; i++) {
     stillGoing.onCall(i).returns(true);
 }
