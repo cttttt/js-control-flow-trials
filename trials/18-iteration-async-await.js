@@ -1,5 +1,5 @@
 // Write an async function that accepts a promise returning function
-// and runs it with the numbers, 1 through 100 in order.
+// and runs it with the numbers, 0 through 99 in order.
 //
 module.exports.hundredthCaller = async function (next) {
 };
