@@ -73,9 +73,10 @@ function looperFor(list, doSomething) {
 function looperDo(list, doSomething) {
     var i=0;
     
-    // runs doSomething() at least once
+    // runs doSomething() at least once (assumes non-empty array)
     do {
-      doSomething(list[])
+      doSomething(list[i]);
+      i++;
     } while(i<list.length)
 }
 ```
