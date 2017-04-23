@@ -27,4 +27,9 @@
 //
 // But note that all of the functions involved are promise-returning.
 module.exports.poller = function poller(areWeThere, nope) {
+    return areWeThere()
+    .then(notYet => 
+            notYet ? 
+            nope().then(() => poller(areWeThere, nope)) : null
+    );
 };

@@ -5,4 +5,5 @@
 //
 //
 module.exports.transformer = async function (list, transform) {
+    return Promise.all(list.map(async (i) => transform(i)));
 }

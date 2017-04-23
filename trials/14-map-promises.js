@@ -8,6 +8,14 @@
 //
 // THIS IS DIFFICULT!!!!
 module.exports.transformer = function (list, transform) {
+    var result = [];
+    return list.reduce(
+        (previous, next, i) => 
+            previous
+            .then(() => transform(list[i])) 
+            .then(r => result[i] = r
+        ), Promise.resolve(0)
+    ).then(() => result);
 }
 
 // Create an error-first-callback function that takes a list, a
@@ -19,4 +27,5 @@ module.exports.transformer = function (list, transform) {
 //
 var Promise = require('bluebird');
 module.exports.transformerBluebirdMap = function (list, transform) {
+    return Promise.map(list, transform);
 }

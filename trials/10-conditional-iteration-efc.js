@@ -9,4 +9,13 @@
 // error-first-callback functions.
 //
 module.exports.poller = function poller(areWeThere, nope, callback) {
+    areWeThere((err, notYet) => {
+        if (notYet) {
+            nope(() => {
+                poller(areWeThere, nope, callback);
+            });
+        } else {
+            callback();
+        }
+    });
 };

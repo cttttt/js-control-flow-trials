@@ -3,4 +3,5 @@
 // list through the transformer function.
 //
 module.exports.transformer = function (list, transform) {
+    return list.map(transform);
 }

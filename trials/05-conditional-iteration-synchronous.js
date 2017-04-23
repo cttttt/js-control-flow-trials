@@ -3,4 +3,7 @@
 // function. Call thereYet() repeatedly until it returns a falsey value.  Every
 // time it returns a truthey value, call nope().
 module.exports.poller = function (thereYet, nope) {
+    while (thereYet()) {
+        nope();
+    }
 }

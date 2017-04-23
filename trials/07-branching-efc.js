@@ -4,4 +4,5 @@
 // it "return".
 //
 module.exports.boolToString = function (getNextBool, callback) {
+    getNextBool((err, r) => callback(null, r ? "True": "False"));
 };

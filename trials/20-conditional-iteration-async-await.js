@@ -26,4 +26,7 @@
 // ...
 //
 module.exports.poller = async function poller(areWeThere, nope) {
+    while (await areWeThere()) {
+        await nope();
+    }
 };

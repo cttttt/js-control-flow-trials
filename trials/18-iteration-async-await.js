@@ -2,4 +2,7 @@
 // and runs it with the numbers, 0 through 99 in order.
 //
 module.exports.hundredthCaller = async function (next) {
+    for (var i=0; i<100; i++) {
+        await next(i);
+    }
 };

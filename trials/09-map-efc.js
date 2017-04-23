@@ -6,6 +6,18 @@
 // Do not use async.map.
 //
 module.exports.transformer = function (list, transform, callback) {
+    var result = [], numResults=0;
+    
+    for (var i=0; i<list.length; i++) {
+        transform(list[i], (err, r) => {
+            result[i] = r;
+            numResults++;
+
+            if (numResults === list.length) {
+                callback(null, result);
+            }
+        });
+    }
 }
 
 // Create an error-first-callback function that takes a list, a transform
@@ -17,4 +29,5 @@ module.exports.transformer = function (list, transform, callback) {
 //
 var async = require('async');
 module.exports.transformerAsyncMap = function (list, transform, callback) {
+    async.map(list, transform, callback);
 }

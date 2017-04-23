@@ -4,4 +4,5 @@
 // depending on the truthiness of the value.
 //
 module.exports.boolToString = function (getNextBool) {
+    return getNextBool().then(r=>r?"True":"False");
 };
